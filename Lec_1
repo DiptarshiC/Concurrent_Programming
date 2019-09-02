@@ -1,0 +1,16 @@
+Lecture 1
+
+Decomposition: Notion of breaking down the program into independent components
+
+latency
+throughput
+littles law(from queing theory)
+concurrency
+Amdahls law
+embarassingly parallel
+multicore machine
+multi-socket machine
+instruction level parallelism
+tomasulo algorithm
+simultaneous multithreading
+memory hierarchy

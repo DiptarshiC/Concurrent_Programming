@@ -1,0 +1,52 @@
+Lecture 2
+
+memory hierarchy
+OS Organization
+Fork-join
+Cache
+Cache line
+coherent
+Cache indexing
+cache miss
+	1)cold miss
+	2)Capacity miss
+	3)Conflict Miss
+Prefetching
+	1)Stream
+	2)Stride
+Cache Locality
+	1)Temporal: Something we used recently we used again
+	2)Spacial: something that we used that will be near something else we will use
+NUMA (Non-Uniform Memory Access)
+
+OS Organization
+
+Process consists of
+	1)System resources
+www.linfo.org : Excellent resource for definitions
+
+Thread : A running instance of executing instance of a sequential sequence of instructions 
+Threads share
+	1)Global various
+	2)Heap(Two threads malloc to the same memory)
+
+Threads DONOT share
+	1)Stacks
+	2)Registers
+	3)Stack pointers
+	4)Return value
+Software Thread vs Hardware Thread
+S/W thread
+	Linux Task
+H/W thread
+	Hardware thread(Simultaneous multi-threading)
+
+In linux
+Both processes (single-threaded) processes and threads are tasks
+Not much of a distinction
+
+Context switching
+
+A context switch is the switching the core from one process/thread to another
+
+A context switch is sometimes described as the kernel suspending execution of one task
