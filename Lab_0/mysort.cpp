@@ -26,11 +26,12 @@ using namespace std;
 /**
 *@func:		myReadFile
 *
-*@description:
+*@description: This function takes the file name as an input and then prints the elements to a vector
+*	       A vector is a dynamic array that is provided by the C++ STL.
 *
-*@param:
+*@param:       char *s(A array of characters representing file names), vector<int> &g1(a vector containing integers)
 *
-*@return:
+*@return:     vector<int> &g1(Elements inside the array changes)
 */
 
 void myReadFile(char *s,vector<int> &g1)
@@ -49,11 +50,12 @@ void myReadFile(char *s,vector<int> &g1)
 /**
 *@func:         myWriteFile
 *
-*@description:
+*@description: This function takes the file name as an input and then prints the elements to a vector
+*	       A vector is a dynamic array that is provided by the C++ STL.
 *
-*@param:
+*@param:       char *s(A array of characters representing file names), vector<int> &g1(a vector containing integers)
 *
-*@return:
+*@return:      vector<int> &g1(Elements inside the array changes)
 */
 
 void myWriteFile(char *s,vector<int> &g1)
