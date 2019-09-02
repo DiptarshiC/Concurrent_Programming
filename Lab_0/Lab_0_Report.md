@@ -6,3 +6,10 @@ The aim of the lab was to take a file having a random number of  unsorted inputs
 the commandline,to sort it out using either Quicksort or Mergesort and to print the
 output to another file whose name would be specified by the second commandline arg.
 
+## Algorithm chose
+
+I have chosen the **QuickSort** algorithm over the mergesort algorithm for the following reasons
+
+1. Time Complexity : Best Case    : **O(nlogn)**
+		     Average Case : **O(nlogn)**
+		     Worst Case   : **O(n^2)**
