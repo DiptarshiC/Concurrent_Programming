@@ -8,10 +8,17 @@ output to another file whose name would be specified by the second commandline a
 
 ## Algorithm chosen
 
-I have chosen the **QuickSort** algorithm over the mergesort algorithm for the following reasons
+I have chosen the **QuickSort** algorithm over the **MergeSort** algorithm for the 
+following reasons
 
 1. Time Complexity : Best Case     : **O(nlogn)**
 		     ,Average Case : **O(nlogn)**
 		     ,Worst Case   : **O(n^2)**
 2. Space Complexity: Average Case  : **O(logn)**
 	             ,Worst Case   : **O(n)**
+
+
+
+##A short  note about the QuickSort Algorithm
+
+The algorithm was invented by Tony Hoare in 1959.Quicksort is a divide and conquer algorithm
