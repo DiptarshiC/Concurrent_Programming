@@ -19,6 +19,6 @@ following reasons
 
 
 
-##A short  note about the QuickSort Algorithm
+## A short  note about the QuickSort Algorithm
 
 The algorithm was invented by Tony Hoare in 1959.Quicksort is a divide and conquer algorithm
