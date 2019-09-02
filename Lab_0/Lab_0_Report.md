@@ -11,5 +11,5 @@ output to another file whose name would be specified by the second commandline a
 I have chosen the **QuickSort** algorithm over the mergesort algorithm for the following reasons
 
 1. Time Complexity : Best Case    : **O(nlogn)**
-		     Average Case : **O(nlogn)**
-		     Worst Case   : **O(n^2)**
+		     ,Average Case : **O(nlogn)**
+		     ,Worst Case   : **O(n^2)**
