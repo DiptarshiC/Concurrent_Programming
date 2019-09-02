@@ -1,7 +1,6 @@
 /**
 *@file: 	mysort.cpp
 *
-
 *@note: 	A program that reads from a particular file of unique integers and outputs
 *		a sorted file and outputs the sorted list.
 *
@@ -150,94 +149,6 @@ void myPrint(vector<int> g1)
 }
 
 /**
-*@func:		myMerge
-*
-*@description:  merges vector after sorting
-*
-*@param:
-*
-*@return:void
-*/
-void myMerge(vector<int> &g1,int l, int m, int r)
-{
-	int i,j,k;
-	int n1 = m - l + 1;
-	int n2 =  r - m;
-	vector<int> L;
-	vector<int> R;
-
-	for(i=0;i<n1;i++)
-	{
-		L.push_back(g1[l+i]);
-	}
-
-	for(j=0;j<n2;j++)
-        {
-                R.push_back(g1[m+1+j]);
-        }
-
-	i=0;/*Index of the first subarray*/
-	j=0;/*Index of the second subbarray*/
-	k=l;/*Index of the merged subarray*/
-	while(i < n1 && j < n2)
-	{
-		if(L[i] < R[j])
-		{
-			g1[k]=L[i];
-			i++;
-		}
-
-		else
-		{
-			g1[k]=R[j];
-			j++;
-		}
-
-	k++;
-
-	}
-
-	while (i < n1)
-	{
-		g1[k] = L[i];
-
-		i++;
-		k++;
-	}
-
-	while (j < n2)
-        {
-                g1[k] = R[j];
-                j++;
-                k++;
-        }
-
-
-}
-
-/**
-*@func: 	myMergeSort
-*
-*@description:
-*
-*@param:
-*
-*@return:void
-*/
-
-void myMergeSort(vector<int> &g1, int l, int r)
-{
-	if(l<r)
-	{
-		int m=(l+r)/2;
-		myMergeSort(g1,l,m);
-		myMergeSort(g1,m+1,r);
-		myMerge(g1,l,m,r);
-	}
-}
-
-
-/**
 *@func:         myQuickSort
 *
 *@description:
@@ -247,34 +158,38 @@ void myMergeSort(vector<int> &g1, int l, int r)
 *void:          void
 */
 
-int myPartition(vector<int> &g1,int l, int r)
+int myPartition(vector<int>& g1,int l, int r)
 {
 
-	int i=l+1;
-	int piv=g1[l];
+	int pivot_index=(l+r)/2;
+	int pivot=g1[pivot_index];
 
-	for(int j = l + 1;j <= r;j++)
+	int i=l;
+	int j=r;
+
+	while(i<=j)
 	{
-	/**
-	rearrange the array by putting elements which are less than pivot
-       	on one side and which are greater that on other.
-	*/
-		if(g1[j] < piv)
+		while(g1[i] < pivot)
 		{
-
-			int temp = g1[i];
-			g1[i] = g1[j];
-			g1[j] = temp;
-
 			i++;
 		}
+		while(g1[j] > pivot)
+		{
+			j--;
+		}
 
+
+		if(i<=j)
+		{
+			int temp=g1[i];
+			g1[i]=g1[j];
+			g1[j]=temp;
+			i++;
+			j--;
+		}
 	}
-	 int temp = g1[l];
-         g1[l]=g1[i-1];
-         g1[i-1]=temp;
 
-	return i-1;
+	return i;
 }
 
 
@@ -288,14 +203,15 @@ int myPartition(vector<int> &g1,int l, int r)
 *void		void
 */
 
-void myQuickSort(vector<int> &g1,int l, int r)
+void myQuickSort(vector<int>& g1,int l, int r)
 {
 
-	int pivot_index=myPartition(g1 , l , r);
-
-	myQuickSort(g1, l, pivot_index - 1);
-	myQuickSort(g1, pivot_index + 1, r);
-
+	if(l < r)
+	{
+		int pivot_index=myPartition(g1 , l , r);
+		myQuickSort(g1, l, pivot_index - 1);
+		myQuickSort(g1, pivot_index + 1, r);
+	}
 }
 
 /**
@@ -334,33 +250,13 @@ int main(int argc, char **argv)
 
 		vector<int> g1;
 		myReadFile(argv[1],g1);
-		/*Printing unsorted vector from reading a file*/
-		std::cout << "Printing out the unsorted vector" << endl;
-		myPrint(g1);
-
-		#ifdef MERGESORT
-		/*Sorting the vector using mergesort*/
-		myMergeSort(g1,0,g1.size()-1);
-		#endif /*MERGESORT*/
 
 		#ifdef QUICKSORT
 		/*Sorting the vector using quicksort*/
 		myQuickSort(g1,0,g1.size()-1);
 		#endif /*QUICKSORT*/
 
-		#ifdef PRINT
-		/*Now, printing the sorted vector*/
-		std::cout << "Now, printing out the sorted vector" << endl;
-		myPrint(g1);
-		#endif /*PRINT*/
-
 		myWriteFile(argv[2], g1);
 		return 0;
 	}
 }
-
-
-
-
-
-
