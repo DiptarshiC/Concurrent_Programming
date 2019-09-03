@@ -25,6 +25,9 @@ The algorithm was invented by Tony Hoare in 1959.Quicksort is a divide and conqu
 
 
 ## References
+There are the sources which I referred for the problem
 
-1. [link] https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/tutorial/
+1. [link] https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844  (CLRS Algorithms textbook. It is highly recommended)
+2. [link] https://youtu.be/SLauY6PpjW  
+3. [link] https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/tutorial/
 
